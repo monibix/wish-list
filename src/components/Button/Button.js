@@ -4,16 +4,10 @@ import './Button.css'
 function Button(props) {
 console.log("props de buton", props)
 
-    const handleSubmit = (event) => {
-        console.log("delete item")
-        event.preventDefault()
-        props.handleDelete(props.item)
-    }
+    const handleClick = () => {props.handleDelete(props.item)}
 
     return (
-            <form onSubmit={handleSubmit} className="deleteItem">
-                <button type="submit">Delete</button>
-            </form>
+        <button className="deleteItem" onClick={handleClick} type="submit" >Delete</button>    
     )
 }
 
